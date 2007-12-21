@@ -19,6 +19,7 @@ Requires(preun): php-pear
 Requires:	php-pear-HTTP >= 1.0
 BuildArch:	noarch
 BuildRequires:	dos2unix
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Mostly RFC2518 compliant helper class for WebDAV server
