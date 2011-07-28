@@ -6,12 +6,12 @@
 %define		pre		RC6
 %if %pre
 %define		release		%{mkrel 0.%pre.%rel}
-%define		tarname		%{upstream_name}-%{version}%{pre}.tgz
-%define		dirname		%{upstream_name}-%{version}%{pre}
+%define		distname	%{upstream_name}-%{version}%{pre}.tgz
+%define		pathname	%{upstream_name}-%{version}%{pre}
 %else
 %define		release		%{mkrel %rel}
-%define		tarname		%{upstream_name}-%{version}.tgz
-%define		dirname		%{upstream_name}-%{version}
+%define		distname	%{upstream_name}-%{version}.tgz
+%define		pathname	%{upstream_name}-%{version}
 %endif
 
 Name:		php-pear-%{upstream_name}
@@ -21,7 +21,7 @@ Summary:	WebDAV Server Baseclass
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/HTTP_WebDAV_Server/
-Source0:	http://download.pear.php.net/package/%{tarname}
+Source0:	http://download.pear.php.net/package/%{distname}
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
@@ -38,12 +38,12 @@ implementation.
 
 %prep
 %setup -q -c
-mv package.xml %{dirname}/%{upstream_name}.xml
+mv package.xml %{pathname}/%{upstream_name}.xml
 
 %install
 rm -rf %{buildroot}
 
-cd %{dirname}
+cd %{pathname}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
 rm -rf %{buildroot}%{_datadir}/pear/.??*
 
@@ -76,10 +76,10 @@ fi
 
 %files
 %defattr(-,root,root)
-%doc %{dirname}/AUTHORS
-%doc %{dirname}/COPYING
-%doc %{dirname}/EXPERIMENTAL
-%doc %{dirname}/TODO
-%doc %{dirname}/README
+%doc %{pathname}/AUTHORS
+%doc %{pathname}/COPYING
+%doc %{pathname}/EXPERIMENTAL
+%doc %{pathname}/TODO
+%doc %{pathname}/README
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/packages/%{upstream_name}.xml
