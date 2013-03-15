@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.99.1
-Release:	%mkrel 16
+Release:	17
 Summary:	WebDAV Server Baseclass
 License:	PHP License
 Group:		Development/PHP
@@ -18,7 +18,6 @@ Requires(preun): php-pear
 Requires:	php-pear-HTTP >= 1.0
 BuildArch:	noarch
 BuildRequires:	php-pear
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Mostly RFC2518 compliant helper class for WebDAV server
@@ -29,7 +28,6 @@ implementation.
 mv package.xml %{upstream_name}-%{version}/%{upstream_name}.xml
 
 %install
-rm -rf %{buildroot}
 
 cd %{upstream_name}-%{version}
 pear install --nodeps --packagingroot %{buildroot} %{upstream_name}.xml
@@ -42,7 +40,6 @@ install -d %{buildroot}%{_datadir}/pear/packages
 install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 %clean
-rm -rf %{buildroot}
 
 
 
