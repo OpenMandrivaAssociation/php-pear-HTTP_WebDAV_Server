@@ -1,15 +1,17 @@
 %define		_class		HTTP
 %define		_subclass	WebDAV
 %define		upstream_name	%{_class}_%{_subclass}_Server
+%define     pre RC8
+
 
 Name:		php-pear-%{upstream_name}
-Version:	1.0.0RC8
-Release:	1
+Version:	1.0.0
+Release:	0.%{pre}
 Summary:	WebDAV Server Baseclass
 License:	PHP License
 Group:		Development/PHP
 URL:		http://pear.php.net/package/HTTP_WebDAV_Server/
-Source0:	http://download.pear.php.net/package/HTTP_WebDAV_Server-%{version}.tgz
+Source0:	http://download.pear.php.net/package/HTTP_WebDAV_Server-%{version}%{pre}.tgz
 Requires(post): php-pear
 Requires(preun): php-pear
 Requires:	php-pear
@@ -44,7 +46,6 @@ install -m 644 %{upstream_name}.xml %{buildroot}%{_datadir}/pear/packages
 
 
 %files
-%defattr(-,root,root)
 %{_datadir}/pear/%{_class}
 %{_datadir}/pear/packages/%{upstream_name}.xml
 
