@@ -4,7 +4,7 @@
 
 Name:		php-pear-%{upstream_name}
 Version:	0.99.1
-Release:	17
+Release:	18
 Summary:	WebDAV Server Baseclass
 License:	PHP License
 Group:		Development/PHP
