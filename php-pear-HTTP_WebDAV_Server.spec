@@ -5,7 +5,7 @@
 Summary:	WebDAV Server Baseclass
 Name:		php-pear-%{modname}
 Version:	0.99.1
-Release:	25
+Release:	26
 License:	PHP License
 Group:		Development/PHP
 Url:		http://pear.php.net/package/HTTP_WebDAV_Server/
