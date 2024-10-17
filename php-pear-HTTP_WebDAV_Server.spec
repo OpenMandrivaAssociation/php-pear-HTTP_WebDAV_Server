@@ -8,7 +8,7 @@ Version:	0.99.1
 Release:	26
 License:	PHP License
 Group:		Development/PHP
-Url:		http://pear.php.net/package/HTTP_WebDAV_Server/
+Url:		https://pear.php.net/package/HTTP_WebDAV_Server/
 Source0:	http://download.pear.php.net/package/%{modname}-%{version}.tar.bz2
 BuildArch:	noarch
 BuildRequires:	php-pear
